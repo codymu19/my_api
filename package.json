@@ -1,0 +1,23 @@
+{
+  "name": "my_api",
+  "version": "1.0.0",
+  "description": "api testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codymu19/my_api.git"
+  },
+  "author": "Cody Murdock",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codymu19/my_api/issues"
+  },
+  "homepage": "https://github.com/codymu19/my_api#readme",
+  "dependencies": {
+    "jest": "^29.7.0",
+    "node-fetch2": "^1.6.3"
+  }
+}
