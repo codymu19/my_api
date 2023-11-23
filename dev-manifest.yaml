@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cody-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      apps: cody-api
+    spec:
+      containers:
+        - name: cody-api
+        impage: us-docker.pkg.dev/cit262-teamproject/cody-api/api-tests
+        ports:
+          - containerPort: 3000
+        resources:
+          limits:
+            cpu: ".5"
+            memory: "500Mi"
+          requests:
+            cpu: ".25"
+            memory: "250Mi"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+            scheme: HTTP
+          failureThreshold: 1
+          periodSeconds: 10
+          timeoutSeconds: 10
+        startupProbe:
+          httpGet:
+            path: /
+            port: 3000
+            scheme: HTTP
+          failureThreshold: 30
+          periodSeconds: 10
+          timeoutSeconds: 10
