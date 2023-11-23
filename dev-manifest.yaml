@@ -7,6 +7,10 @@ spec:
   selector:
     matchLabels:
       apps: cody-api
+  template:
+    metadata:
+      labels:
+      app: cody-api
     spec:
       containers:
         - name: cody-api
